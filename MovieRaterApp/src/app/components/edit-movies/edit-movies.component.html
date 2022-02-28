@@ -1,0 +1,61 @@
+<div class="row">
+    <a routerLink="/" class="btn btn-link" >
+    <i class="fa fa-arrow-circle-o-left">Back to Dashboard</i>
+    </a>
+</div>
+<div class="card" >
+    <div class="card-header">
+        Edit Movies
+    </div>
+    <div class="card-body">
+        <form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)">
+        <div class="form-group">
+            <label for="Title">Movie Title</label>
+            <input
+               type="text"
+               class="form-control"
+               name="Title"
+               #movietitle = "ngModel"
+               [ngClass]="{'is-invalid': movietitle.errors && movietitle.touched}"
+               [(ngModel)]= "movie.Title"
+               minlength =2
+               required
+            
+            >
+            <div [hidden]="!movietitle.errors?.required"
+            class="invalid-feedback" >
+            Movie Title Required 
+            </div>
+            <div [hidden]="!movietitle.errors?.minlength"
+            class="invalid-feedback" >
+            Movie Title Must be more than 2 Letters
+            </div>
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <input
+                   type="text"
+                   class="form-control"
+                   name="Description"
+                   #moviedescription = "ngModel"
+                   [ngClass]="{'is-invalid': moviedescription.errors && moviedescription.touched}"
+                   [(ngModel)]="movie.Description"
+                   minlength =2
+                   required
+                
+                >
+                <div [hidden]="!moviedescription.errors?.required"
+                class="invalid-feedback" >
+                Description Required 
+                </div>
+                <div [hidden]="!moviedescription.errors?.minlength"
+                class="invalid-feedback" >
+                Movie Description Must be more than 2 Letters
+                </div>
+               
+  
+            <input type="submit" value="Update" class="btn btn-primary btn-block" >
+            </div>           
+        </div>
+        </form>
+  </div>
+</div>

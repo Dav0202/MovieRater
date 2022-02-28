@@ -1,0 +1,32 @@
+<h2><i class="fa fa-film"></i> Movies</h2>
+<div class="row">
+  <div class="col-md-10">
+    <div class="card" *ngFor="let movie of movie">
+      <div class="card-body">
+        <h3>{{ movie.Title }}</h3>
+        <p>{{ movie.Description }}</p>
+        <h6>Movie Ratings</h6>
+          <i class="fa fa-star" [ngClass]="{'gold': movie.avg_rating > 0}"></i>
+          <i class="fa fa-star" [ngClass]="{'gold' : movie.avg_rating> 1}"></i>
+          <i class="fa fa-star" [ngClass]="{'gold': movie.avg_rating > 2}"></i>
+          <i class="fa fa-star" [ngClass]="{'gold': movie.avg_rating > 3}"></i>
+          <i class="fa fa-star" [ngClass]="{'gold': movie.avg_rating > 4}"></i>
+          <h6>{{movie.avg_rating}}/5</h6> 
+          
+        <h6><i class="fa fa-users"></i>{{movie.no_of_rating}} Users Have Rated</h6>
+        <h6>Rate this movie <i routerLink='movie/{{movie.id}}' class="fa fa-arrow-circle-right"></i></h6>
+        <hr>
+        <button class="btn btn-danger"><i class="fa fa-remove" (click)="removeMovie(movie)"></i></button>
+        <button class="btn btn-light"><i  class="fa fa-pencil" routerLink='movie/edit/{{movie.id}}'></i></button>
+      </div>
+    
+    </div>
+      
+  </div>
+  <div class="col-md-2">
+    <a class="btn btn-success btn-block" routerLink='/add-movies'>
+      <i class="fa fa-plus"> New Movie</i>
+    </a>
+  </div>
+</div>
+  

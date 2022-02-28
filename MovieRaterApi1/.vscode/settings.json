@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
+    "djangointellisense.debugMessages": true,
+    "python.autoComplete.addBrackets": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "vsintellicode.features.python.deepLearning": "enabled",
+    "python.analysis.completeFunctionParens": true
+}

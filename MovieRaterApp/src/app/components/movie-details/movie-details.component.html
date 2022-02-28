@@ -1,0 +1,18 @@
+<div class="row">
+    <a routerLink="/" class="btn btn-link" >
+    <i class="fa fa-arrow-circle-o-left">Back to Dashboard</i>
+    </a>
+</div>
+<div>
+    <h6>Rate this movie
+      <br>
+      <br>
+      <i  (mouseenter)="countstar(star)" *ngFor="let star of stars"
+    (mouseleave) = "selectedvalue =0"
+    (click)="rateclicked(star)"
+    [ngClass]="{'gold': (star <= selectedvalue)}"
+    class="fa fa-star "
+    >    
+    </i>
+    </h6>
+  </div>
